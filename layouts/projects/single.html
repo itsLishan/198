@@ -9,38 +9,41 @@
     {{ partial "navbar.html" (dict "context" . "originPage" "project") }}
     <div class="container">
         <h1>{{ .Title }}</h1>
-        {{ $img:= .Resources.GetMatch .Params.projectImage }}
-        <img src="{{ $img.RelPermalink }}" />
+        
+        {{/*  Each project has either a project image or a project video  */}}
+        {{/*  The code below checks if there's a project video, and if so checks the type  */}}
+        {{/*  Youtube videos and Vimeo videos are handled differently. If you have another video type 
+            then you'll need to add code to handle that new video type  */}}
+        {{/*  If there's no project video, the project image is displayed in the header  */}}
+        {{ if .Params.projectVideo }}
+            {{ if eq .Params.projectVideoType "youtube" }}
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ .Params.projectVideo  }}?modestbranding=0&showinfo=0&rel=0" frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>    
+                </div>
+                {{ else if eq .Params.projectVideoType "vimeo" }}
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/{{ .Params.projectVideo  }}?title=0&byline=0&portrait=0"  frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+                    </div>
+                {{ else if eq .Params.projectVideoType "" }}
+                    <p>projectVideoType not entered!!! </p>
+                {{ else }}
+                    <p>video streaming platform not yet supported! TODO: add code here for your new video platform</p>
+            {{ end }}
+        {{ else }}
+            {{ if .Params.projectImage }}
+                {{ $img:= .Resources.GetMatch .Params.projectImage }}
+                <img src="{{ $img.RelPermalink }}" />
+            {{ else }}
+                <p>THERE IS NO PROJECT IMAGE OR PROJECT VIDEO ASSOCIATED WITH THIS PROJECT!!!</p>
+                <p>TODO: ADD A PROJECT IMAGE OR PROJECT VIDEO</p>
+        {{ end }}
+        {{ end }}
+
         {{ .Content }}
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PaYvlVR_BEc?modestbranding=0&showinfo=0&rel=0" frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>    
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/285189099?title=0&byline=0&portrait=0"  frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
-        </div>
+        {{/*  You can add more images and videos in the content as well! 
+            Do that in the .md file for the project  */}}
+     
     </div>
     
-{{/*  
-    {{ if .Params.video}}
-	 <div class="video-wrapper">
-   {{if .Params.isyoutube }}
-	 	<iframe width="1920" height="1080" src="https://www.youtube.com/embed/{{ .Params.video }}?modestbranding=0&showinfo=0&rel=0" frameborder="0" allowfullscreen=""></iframe>
-    {{ else }}
-      {{ if .Params.isnativevideo }}
-        <video width="960" height="540" preload autoplay loop muted>
-          <source src="{{ .Params.video }}.mp4" type='video/mp4; codecs="avc1.42E001"' />
-          <source src="{{ .Params.video }}.ogv" type='video/ogg; codecs="theora, vorbis"' />
-          <source src="{{ .Params.video }}.webm" type='video/webm; codecs="vp8, vorbis"' />
-        </video>
-      {{ else }}
-        <iframe width="1920" height="1080" src="{{ .Params.video }}" frameborder="0" allowfullscreen=""></iframe>
-      {{ end }}
-    {{ end }}
-	 </div>
-   {{else}}
-   <img class = "header-image" src="{{ .Params.headerimage }}"/>
-	 {{ end }}  */}}
-
-
 </body>
 </html>

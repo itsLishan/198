@@ -9,8 +9,16 @@
     date = 2019-05-19T01:12:18-07:00 #the date the file was created
 
     shortDescription = "Here's a 5 word description"
+    projectVideo = ""
+    #Project video is just the unique part of the URL  
+    # For example, if the link is https://vimeo.com/285189099 then the unique part is  285189099
+    projectVideoType = ""
+    #Enter "youtube" or "vimeo". You can add other video types as well by editing single.html 
     projectImage = "metropolis_album.jpg"
-
+    #Enter the filename only. For example, "metropolis_album.jpg" 
+    #This image should be saved in the project folder with the name of your project 
+    projectImageAltText = ""
+    #Alt text is the text that gets read by screenreaders for accessibility (typically for the visually impaired) 
 +++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -28,5 +36,3 @@ Below is a list
 - hyphens make bullets
 + plusses make bullets
 * you can choose!
-
-> Cindy Mayweather is the Archandroid and she rocks my world. -Mr. Greendown
