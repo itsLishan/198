@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" . }}
+    {{/*  imports "head.html" from the partials/ folder in layouts/  */}}
+    {{/*  the second argument is the context for variables in "head.html" and using "." means use the same variable namespace as this document  */}}
+</head>
+<body>
+    {{ partial "navbar.html" (dict "context" . "originPage" "project") }}
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ $img:= .Resources.GetMatch .Params.projectImage }}
+        <img src="{{ $img.RelPermalink }}" />
+        {{ .Content }}
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PaYvlVR_BEc?modestbranding=0&showinfo=0&rel=0" frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>    
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/285189099?title=0&byline=0&portrait=0"  frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+{{/*  
+    {{ if .Params.video}}
+	 <div class="video-wrapper">
+   {{if .Params.isyoutube }}
+	 	<iframe width="1920" height="1080" src="https://www.youtube.com/embed/{{ .Params.video }}?modestbranding=0&showinfo=0&rel=0" frameborder="0" allowfullscreen=""></iframe>
+    {{ else }}
+      {{ if .Params.isnativevideo }}
+        <video width="960" height="540" preload autoplay loop muted>
+          <source src="{{ .Params.video }}.mp4" type='video/mp4; codecs="avc1.42E001"' />
+          <source src="{{ .Params.video }}.ogv" type='video/ogg; codecs="theora, vorbis"' />
+          <source src="{{ .Params.video }}.webm" type='video/webm; codecs="vp8, vorbis"' />
+        </video>
+      {{ else }}
+        <iframe width="1920" height="1080" src="{{ .Params.video }}" frameborder="0" allowfullscreen=""></iframe>
+      {{ end }}
+    {{ end }}
+	 </div>
+   {{else}}
+   <img class = "header-image" src="{{ .Params.headerimage }}"/>
+	 {{ end }}  */}}
+
+
+</body>
+</html>
