@@ -8,14 +8,16 @@
 
 </head>
 <body>
-    {{ partial "navbar.html" (dict "context" . "originPage" "home") }}
+    {{ partial "navbar.html" (dict "context" . "originPage" "albums") }}
     {{/*  partial takes two parameters: first parameter is a string, the second is an object  */}}
     {{/*  in this case, the second argument is a dictionary object  */}}
     {{/*  dict creates a new dictionary with a set of key-value pairs. 
         As many as you want, but they must be paired "key value key value key value" */}}
-
-    {{ .Scratch.Set "elements" .Site.Data.project_order.albums }}
-    {{ partial "card-layout.html" . }}
+    <div class="container">
+        <h2>Albums</h2>
+        {{ .Scratch.Set "elements" .Site.Data.project_order.albums }}
+        {{ partial "card-layout.html" . }}
+    </div>
 
 
     {{ partial "scripts.html" }}
