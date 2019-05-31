@@ -15,3 +15,10 @@ albums=[
     "/projects/archandroid",
     "/projects/metropolis",
 ]
+
+singles=[
+    "/projects/i-like-that",
+    "/projects/pynk",
+    "/projects/yoga",
+    "/projects/tightrope",
+]

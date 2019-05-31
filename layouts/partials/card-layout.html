@@ -1,6 +1,7 @@
-<div class="container">
+{{/*  <div class="container">  */}}
     {{ $numColumns := 3 }}
-    {{ range $idx, $proj:= (.Scratch.Get "elements") }}
+    {{ $projects := .Scratch.Get "elements" }}
+    {{ range $idx, $proj:= $projects }}
         {{ if modBool $idx $numColumns }} 
         {{/*  if $idx modulo $numColumns = 0  */}}
             <div class="row gallery-row">
@@ -35,9 +36,10 @@
             
         {{ end }}
         {{ $nextIdx := add $idx 1 }}
-        {{ if modBool $nextIdx $numColumns }}
+
+        {{ if or (modBool $nextIdx $numColumns) (eq $nextIdx (len $projects))}}
         {{/*  if the index of the following project will be a multiple of $numColumns, end the row  */}}
             </div>
         {{ end }}
     {{ end }}
-</div>
+{{/*  </div>  */}}
