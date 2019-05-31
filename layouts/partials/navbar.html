@@ -1,5 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"><h1>Cindi Mayweather</h1></a>
+
+<div class="d-none d-sm-block portfolio-name">
+    <a href="index.html"><h1>Cindi Mayweather</h1></a>
+</div>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand d-block d-sm-none" href="index.html"><h1>Cindi Mayweather</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,7 +12,7 @@
             <li class="nav-item {{ if eq .originPage `home` }} active {{ end }}">
             {{/*  active means this is the current page  */}}
             {{/*  using ` quotes around "home" because I'm already inside of a quote  */}}
-                <a class="nav-link blue-text" href="/index.html" style="color: blue;">Portfolio
+                <a class="nav-link" href="/index.html">Portfolio
                     {{ if eq .originPage `home` }} 
                         <span class="sr-only">(current)</span>
                     {{ end }}
