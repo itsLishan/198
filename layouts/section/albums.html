@@ -14,9 +14,8 @@
     {{/*  dict creates a new dictionary with a set of key-value pairs. 
         As many as you want, but they must be paired "key value key value key value" */}}
 
-    {{ .Scratch.Set "elements" .Site.Data.project_order.content }}
-    {{/*  {{ partial "card-layout.html" . }}  */}}
-    {{ partial "scrolling-layout.html" . }}
+    {{ .Scratch.Set "elements" .Site.Data.project_order.albums }}
+    {{ partial "card-layout.html" . }}
 
 
     {{ partial "scripts.html" }}

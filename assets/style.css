@@ -11,3 +11,29 @@
 .card-body a:hover{ /* changes the style of a ON HOVER and only when it's inside of card-body */
     color: blueviolet;
 }
+
+.red-text{
+    color: red;
+}
+
+.blue-text{
+    color: blue;
+}
+
+.scrolling-layout-row{
+    padding-bottom: 5rem;
+}
+
+.scrolling-layout-row:nth-of-type(odd){
+    background-color:black;
+}
+
+.scrolling-layout-row:nth-of-type(even){
+    background-color:white;
+}
+
+.scrolling-layout-project-image{
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+}

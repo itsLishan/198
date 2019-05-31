@@ -24,7 +24,9 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-
+<div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/142091443?title=0&byline=0&portrait=0"  frameborder="0" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
 
 
 a new line in markdown will not be displayed in the browser.

@@ -1,8 +1,17 @@
 content = [
+    "/projects/i-like-that",
+    "/projects/pynk",
     "/projects/dirty-computer",
     "/projects/yoga",
     "/projects/electric-lady",
     "/projects/tightrope",
     "/projects/archandroid",
     "/projects/metropolis", 
+]
+
+albums=[
+    "/projects/dirty-computer",
+    "/projects/electric-lady",
+    "/projects/archandroid",
+    "/projects/metropolis",
 ]

@@ -29,19 +29,22 @@
                 {{ else }}
                     <p>video streaming platform not yet supported! TODO: add code here for your new video platform</p>
             {{ end }}
-        {{ else }}
-            {{ if .Params.projectImage }}
-                {{ $img:= .Resources.GetMatch .Params.projectImage }}
-                <img src="{{ $img.RelPermalink }}" />
             {{ else }}
-                <p>THERE IS NO PROJECT IMAGE OR PROJECT VIDEO ASSOCIATED WITH THIS PROJECT!!!</p>
-                <p>TODO: ADD A PROJECT IMAGE OR PROJECT VIDEO</p>
-        {{ end }}
+                {{ if .Params.projectImage }}
+                    {{ $img:= .Resources.GetMatch .Params.projectImage }}
+                    <img class="img-fluid" src="{{ $img.RelPermalink }}" />
+                    {{ else }}
+                        <p>THERE IS NO PROJECT IMAGE OR PROJECT VIDEO ASSOCIATED WITH THIS PROJECT!!!</p>
+                        <p>TODO: ADD A PROJECT IMAGE OR PROJECT VIDEO</p>
+                {{ end }}
         {{ end }}
 
-        {{ .Content }}
-        {{/*  You can add more images and videos in the content as well! 
-            Do that in the .md file for the project  */}}
+        <div class="red-text">
+            <p>{{ .Params.completionDate }}</p>
+            {{ .Content }}
+            {{/*  You can add more images and videos in the content as well! 
+                Do that in the .md file for the project  */}}
+        </div>
      
     </div>
     

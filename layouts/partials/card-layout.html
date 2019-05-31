@@ -1,6 +1,6 @@
 <div class="container">
     {{ $numColumns := 3 }}
-    {{ range $idx, $proj:= .Site.Data.project_order.content }}
+    {{ range $idx, $proj:= (.Scratch.Get "elements") }}
         {{ if modBool $idx $numColumns }} 
         {{/*  if $idx modulo $numColumns = 0  */}}
             <div class="row gallery-row">
@@ -11,7 +11,9 @@
         {{/*  Resizes and crops the project image to 400 X 400 so that we get a perfect square which loads quickly  */}}
         <div class="col-4">
             <div class="card h-100 border-0">
-                <img src="{{ $imgThumb.RelPermalink }}" class="card-img-top" alt="...">
+                {{ if $imgThumb }}
+                    <img src="{{ $imgThumb.RelPermalink }}" class="card-img-top" alt="...">
+                {{ end }}
                 <div class="card-body">
                     <a href="{{ .RelPermalink }}" class="stretched-link">
                         <h5 class="card-title">{{ .Title }}</h5>
