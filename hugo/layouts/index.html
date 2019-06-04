@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" . }}
+    {{/*  imports "head.html" from the partials/ folder in layouts/  */}}
+    {{/*  the second argument is the context for variables in "head.html" and using "." 
+    means use the same variable namespace as this document  */}}
+</head>
+<body>
+    {{ partial "navbar.html" (dict "context" . "originPage" "home") }}
+    {{/*  partial takes two parameters: first parameter is a string, the second is an object  */}}
+    {{/*  in this case, the second argument is a dictionary object  */}}
+    {{/*  dict creates a new dictionary with a set of key-value pairs. 
+        As many as you want, but they must be paired "key value key value key value" */}}
+
+
+    {{ .Scratch.Set "elements" .Site.Data.project_order.content }}
+
+    {{/*  NORMAL CARD LAYOUT: begins here  */}}
+        {{ partial "card-layout.html" . }}
+    {{/*  NORMAL CARD LAYOUT: ends here  */}}
+
+    {{/*  SCROLLING LAYOUT: starts here  */}}
+        {{ partial "scrolling-layout.html" . }}
+    {{/*  SCROLLING LAYOUT: ends here  */}}
+    
+    {{/*  CATEGORY LAYOUT: starts here  */}}
+        <div class="container">
+            <h2>Albums</h2>
+            {{ .Scratch.Set "elements" .Site.Data.project_order.albums }}
+            {{ partial "card-layout.html" . }}
+
+            <h2>Singles</h2>
+            {{ .Scratch.Set "elements" .Site.Data.project_order.singles }}
+            {{ partial "card-layout.html" . }}
+        </div>
+    {{/*  CATEGORY LAYOUT: ends here  */}}
+    
+    {{ partial "scripts.html" }}
+</body>
+</html>

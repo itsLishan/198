@@ -1,0 +1,28 @@
+# NORMAL CARD LAYOUT and SCROLLING LAYOUT: starts here
+    content = [
+        "/projects/i-like-that",
+        "/projects/pynk",
+        "/projects/dirty-computer",
+        "/projects/yoga",
+        "/projects/electric-lady",
+        "/projects/tightrope",
+        "/projects/archandroid",
+        "/projects/metropolis", 
+    ]
+# NORMAL CARD LAYOUT and SCROLLING LAYOUT: ends here
+
+# CATEGORY LAYOUT and CATEGORY PAGES: starts here
+    albums=[
+        "/projects/dirty-computer",
+        "/projects/electric-lady",
+        "/projects/archandroid",
+        "/projects/metropolis",
+    ]
+
+    singles=[
+        "/projects/i-like-that",
+        "/projects/pynk",
+        "/projects/yoga",
+        "/projects/tightrope",
+    ]
+# CATEGORY LAYOUT and CATEGORY PAGES: ends here
