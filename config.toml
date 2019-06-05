@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "http://itslishan.com/198"
 languageCode = "en-us"
 title = "Cindi Mayweather"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
