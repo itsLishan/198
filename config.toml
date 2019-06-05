@@ -2,4 +2,5 @@ baseURL = ""
 languageCode = "en-us"
 title = "Cindi Mayweather"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+publishDir = "../198"
 
