@@ -19,7 +19,8 @@
     <div class="container">
         <h2>Albums</h2>
         {{ .Scratch.Set "elements" .Site.Data.project_order.albums }}
-        {{ partial "card-layout.html" . }}
+        {{/*  {{ partial "card-layout.html" . }}  */}}
+        {{ partial "overlay-layout.html" . }}
     </div>
 
 
